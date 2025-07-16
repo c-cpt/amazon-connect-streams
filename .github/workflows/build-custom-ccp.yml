@@ -1,0 +1,59 @@
+name: Build Custom CCP
+
+on:
+  push:
+    branches: [ custom-styling ]
+  pull_request:
+    branches: [ custom-styling ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Build custom CCP
+      run: npm run build-streams
+      
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: custom-connect-streams
+        path: |
+          release/connect-streams.js
+          release/connect-streams-min.js
+        retention-days: 30
+        
+    - name: Create Release (on tag)
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Custom CCP ${{ github.ref }}
+        body: |
+          Custom Amazon Connect Streams build with styling enhancements.
+          
+          ## Files
+          - `connect-streams.js` - Unminified version for development
+          - `connect-streams-min.js` - Minified version for production
+          
+          ## Changes
+          - Custom styling injection for CCP iframe
+          - Modern UI design with gradient buttons
+          - Color-coded action buttons
+          - Enhanced UX with hover effects and animations
+        draft: false
+        prerelease: false
