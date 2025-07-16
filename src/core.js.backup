@@ -1775,11 +1775,6 @@ connect.core.setSoftphoneUserMediaStream = function (stream) {
       }
     }
 
-    // Apply custom styling
-    if (typeof window !== "undefined" && window.CCPStyleInjector) {
-      window.CCPStyleInjector.styleContainer(containerDiv);
-      window.CCPStyleInjector.injectCustomStyles(iframe);
-    }
     containerDiv.appendChild(iframe);
     return iframe;
   }

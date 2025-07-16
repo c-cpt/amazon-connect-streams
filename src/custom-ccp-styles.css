@@ -1,0 +1,86 @@
+/* Custom CCP Styling */
+/* This CSS will be injected into the CCP iframe to customize its appearance */
+
+/* Main CCP container */
+.ccp-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  background-color: #f8f9fa !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Header styling */
+.ccp-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  border-radius: 8px 8px 0 0 !important;
+  padding: 12px !important;
+}
+
+/* Button styling */
+.ccp-button, button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: none !important;
+  border-radius: 6px !important;
+  color: white !important;
+  padding: 8px 16px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.ccp-button:hover, button:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4) !important;
+}
+
+/* Accept call button - green */
+.ccp-button.accept, button[data-testid*="accept"], button[aria-label*="accept" i] {
+  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%) !important;
+}
+
+/* Reject/End call button - red */
+.ccp-button.reject, .ccp-button.end, button[data-testid*="reject"], button[data-testid*="end"], button[aria-label*="end" i], button[aria-label*="reject" i] {
+  background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%) !important;
+}
+
+/* Hold button - orange */
+.ccp-button.hold, button[data-testid*="hold"], button[aria-label*="hold" i] {
+  background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%) !important;
+}
+
+/* Mute button styling */
+.ccp-button.mute, button[data-testid*="mute"], button[aria-label*="mute" i] {
+  background: linear-gradient(135deg, #a0aec0 0%, #718096 100%) !important;
+}
+
+/* Status indicators */
+.ccp-status {
+  border-radius: 20px !important;
+  padding: 4px 12px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Input fields */
+.ccp-input, input[type="text"], input[type="tel"], input[type="number"] {
+  border: 2px solid #e2e8f0 !important;
+  border-radius: 6px !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  transition: border-color 0.3s ease !important;
+}
+
+/* Phone number display */
+.ccp-phone-number {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #2d3748 !important;
+  background-color: #f7fafc !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  border: 1px solid #e2e8f0 !important;
+}

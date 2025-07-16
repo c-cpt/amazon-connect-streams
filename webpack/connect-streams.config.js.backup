@@ -16,8 +16,8 @@ const config = Object.assign({}, commonConfig, {
     './src/request-storage-access.js',
     './src/api.js',
     './src/lib/amazon-connect-websocket-manager.js',
-    './src/custom-ccp-injector.js',
-    './src/core.js',
+    './src/custom-ccp-injector.js
+    ./src/core.js',
     './src/ringtone.js',
     './src/softphone.js',
     './src/worker.js',
